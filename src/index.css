@@ -1,13 +1,674 @@
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+:root{
+  --primary--color:#240738;
+  --SECOONF--color:#c689f9;
+  --color1:#ff00be;
+  --color2:#fee800;
+  --color3:#06ccff;
+  --titles:#ddddddbd;
+}
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+  font-family:  'Roboto',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color:black;
+  
 }
-
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+.Dashboard{
+  width: 100%;
+}
+.flex-dashboard{
+  display: flex;
+  width: 100%;
+}
+.Dashboard .slidertop{
+    padding: 20px;
+    background-color:rgba(0, 0, 0, 0.477);
+    border-bottom:2px solid #ffffff29 ;
+    border-width: 10%;
+    display: flex;
+}
+.Dashboard .slidertop .menu-icon{
+  color: var(--titles);
+  font-size: 35px;
+  margin-right: 10px;
+  display: none;
+}
+.Dashboard .slidertop img{
+  width: 100px;
+}
+.Dashboard .slidertop .avatar{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.Dashboard .slidertop .avatar .imgprofile{
+  background-color: var(--color3);
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  font-weight: 800;
+  display: flex;
+  font-size: 20px;
+  align-items: center;
+  justify-content: center;
+}
+.Dashboard .slidertop .avatar h4{
+  color: var(--titles);
+  margin-right: 10px;
+}
+.Dashboard .slidebar{
+  background-color:rgba(0, 0, 0, 0.477);
+  width: 25%;
+  margin: 0;
+  border-right:2px solid #ffffff29 ;
+}
+.Dashboard .bodyDashboard {
+  width: 80%;
+  height: 100%;
+  padding: 20px;
+}
+.Dashboard .bodyDashboard .cyrcles {
+  width: 100%;
+  display: flex;
+}
+.Dashboard .bodyDashboard .cyrcles .first,
+.second{
+margin-right: 10px;
+}
+.Dashboard .bodyDashboard .cyrcles .first,
+.second, 
+.third{
+  width: 300px;
+  margin-top: 10px;
+}
+.Dashboard .bodyDashboard .cyrcles .circular {
+  height: 150px;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color:rgba(0, 0, 0, 0.477);
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+  position: relative;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated{
+  transform: rotate(90deg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .circle-background{
+  fill: none;
+  stroke: rgba(223, 223, 223, 0.336);
+  stroke-width: 1px;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .circle-progress{
+  fill: none;
+  stroke: var(--SECOONF--color);
+  stroke-linejoin: round;
+  stroke-linecap: round;
+  animation: fadeIn 1s linear forwards;
+  animation-delay: 2s;
+  opacity: 0;
+}
+@keyframes fadeIn {
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated.texts .text-circle{
+  font-weight: bold;
+  stroke: #c689f9;
+  fill: #fff;
+  font-size: 23px;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .name-circle{
+  fill: #ddddddce;
+  font-size: 15px;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .texts{
+  position: absolute;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .texts h2{
+  transform: rotate(270deg);
+  color: #fff;
+  width: 800;
+  font-size: 2.5em;
+  margin-top: -5px;
+  margin-left:-20px ;
+  display: flex;
+  align-items: center;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .texts p{
+  transform: rotate(270deg);
+  color: #dddddda2;
+  position: absolute;
+  bottom: 30%;
+  left: 55%;
+  font-size: 10px;
+  text-transform: uppercase;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .texts h2 span{
+  font-size: 0.5em;
+  font-weight: 300;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .bot{ 
+  position: absolute;
+  z-index: 1;
+  width: 100px;
+  height: 100px;
+  animation: animatdot 2s linear forwards;
+  border-radius: 50%;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .rotated .bot::before{
+   position: absolute;
+  content: "";
+  width: 12px;
+  height: 12px;
+  left: -6px;
+  top: 50%;
+  transform:translateY(-50%);
+  border-radius: 50%;
+ }
+
+ .Dashboard .bodyDashboard .cyrcles .first .circular .rotated .bot::before{
+  background-color: var(--color1);
+  box-shadow: 0px 0px 10px var(--color1),0 0 10px var(--color1); 
+ }
+ .Dashboard .bodyDashboard .cyrcles .second .circular .rotated .bot::before{
+  background-color: var(--color2);
+  box-shadow: 0px 0px 10px var(--color2),0 0 10px var(--color2); 
+ }
+ .Dashboard .bodyDashboard .cyrcles .third .circular .rotated .bot::before{
+  background-color: var(--color3);
+  box-shadow: 0px 0px 10px var(--color3),0 0 10px var(--color3); 
+ }
+@keyframes animatdot {
+  0%{
+    transform: rotate(0deg);
+  }
+}
+.Dashboard .bodyDashboard .cyrcles .circular svg {
+  transform: rotate(270deg);
+}
+.Dashboard .bodyDashboard .cyrcles .circular{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .text-persentage{
+  fill: #fff;
+  font-weight: 800;
+  font-size: 25px;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .root{
+  width: 120px;
+  position: relative;
+}
+.Dashboard .bodyDashboard .cyrcles .circular .root::after{
+  position: absolute;
+  content: "";
+}
+.Dashboard .bodyDashboard .cyrcles .circular .container{
+  width: 100%;
+  height: 100%;
+}
+.Dashboard .bodyDashboard .actions{
+  width: 100%;
+  height: 300px;
+  display: flex;
+  margin-bottom: 10px;
+}
+.Dashboard .bodyDashboard .actions .activites{
+  margin-top: 10px;
+  width:66%;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color:rgba(0, 0, 0, 0.477);
+  margin-left:10px;
+  height: 100%;
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+}
+.Dashboard .bodyDashboard .actions .activites .titleaction{
+  display: flex;
+  align-items: center;
+  margin: 8px 15px;
+}
+.Dashboard .bodyDashboard .actions .activites .titleaction i{
+  width: 27px;
+  height: 27px;
+  background-color:#fafafa31;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.Dashboard .bodyDashboard .actions .activites .titleaction i .iconactive{
+  font-size: 18px;
+  color:#fff;
+}
+.Dashboard .bodyDashboard .actions .activites .titleaction h2{
+  color: #ddddddcb;
+  font-size: 18px;
+  font-weight: 800;
+  text-shadow: 0px 0px 0.25px #fff;
+}
+.Dashboard .bodyDashboard .actions .sales{
+  width:32.5%;
+  height: 100%;
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales{
+  margin-top: 10px;
+  width:100%;
+  height: 37%;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+  background-color:rgba(0, 0, 0, 0.477);
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales h2{
+  color: var(--titles);
+  font-size: 17px;
+  font-weight: 800;
+  margin: 5px 15px;
+  display: flex;
+  align-items: center;
+  text-shadow: 0px 0px 0.5px var(--color3);
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales h2 i{
+  width: 27px;
+  height: 27px;
+  background-color:#06cdff26;
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-right: 10px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales h2 i .icon{
+  color: var(--color3);
+  
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales .documont-data{
+  width: 90%;
+  margin: auto;
+  border-radius: 5px;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  background-color:rgba(0, 0, 0, 0.477);
+  color: white;
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales .documont-data span{
+  font-size: 2.5rem;
+  font-weight: 800;
+  margin-left: 20px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales .documont-data p{
+  font-size: 10px;
+  font-weight: 800;
+  color: #ffffff77;
+  margin-left: 20px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount{
+  margin-top: 10px;
+  width:100%;
+  height: 60%;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+  background-color:rgba(0, 0, 0, 0.477);
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount h2{
+  color: var(--titles);
+  font-size: 17px;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  margin:15px 20px ;
+  text-shadow: 0px 0px 0.25px #16D722 ;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount h2 i{
+  color:#16D722;
+  width: 27px;
+  height: 27px;
+  margin-right: 10px;
+  background-color: #16d7234c;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .amount{
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  height: 60%;
+  background-color:rgba(0, 0, 0, 0.477);
+  position: relative;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .price{
+  font-size: 2.5rem;
+  font-weight: bold;
+  font-family: sans-serif;
+  color: #fff;
+  margin-left: 20px;
+  display: flex;
+  align-items: center;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount p{
+  color: var(--titles);
+  font-size: 10px;
+  margin-left: 20px;
+  margin-top: 10px;
+  font-weight: bold;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount span{
+  font-size: 40px;
+  font-weight: 500;
+  color: #16D722;
+  margin-top: 10px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .amount-persontage{
+  position: absolute;
+  right: 5px;
+  bottom: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .amount-persontage span{
+  color: #16D722;
+  font-size: 15px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .amount-persontage img{
+  width: 20px;
+}
+.Dashboard .bodyDashboard .allproduct{
+  width: 100%;
+  display: flex;
+}
+.Dashboard .bodyDashboard .allproduct .projects{
+  box-shadow: 0px 0px 20px black inset;
+  width: 80%;
+  margin-top: 10px;
+  height: 100%;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .table{
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 15px auto;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .table h2{
+  color: var(--titles);
+  font-size: 14px;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs{
+  margin: auto;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color:rgba(0, 0, 0, 0.477);
+  box-shadow: 0px 0px 2px #ffffffae;
+  padding: 5px;
+  border-radius: 10px;
+  color: #fff;
+  font-size: 10px;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs .type{
+  position: absolute;
+  left: 52.5%;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs .np{
+  position: absolute;
+  left: 40.5%;
+  margin-right: 8px;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs .name{
+  display: flex;
+  align-items: center;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs .name .icon{
+  color: var(--color3);
+  font-size: 20px;
+  margin-right: 5px;
+}
+.Dashboard .bodyDashboard .allproduct .projects .documments .data-docs  span{
+  text-align: center;
+}
+.Dashboard .bodyDashboard .allproduct .save{
+  width: 40%;
+  margin-top: 10px;
+  border-radius: 15px;
+  border: 1px solid #ffffff41;
+  background: linear-gradient(135deg,rgba(255, 255, 255, 0.1)),rgba(255, 255, 255, 0);
+  backdrop-filter:blur(10px);
+  -webkit-backdrop-filter: blur(2px);
+  margin-left:10px ;
+  box-shadow: 0px 0px 7px #ffffff52 inset;
+}
+.Dashboard .bodyDashboard .allproduct .save h2{
+  color: var(--titles);
+  display: flex;
+  align-items: center;
+  margin: 10px 20px;
+  font-size: 17px;
+  font-weight: 800;
+  display: flex;
+  text-shadow: 0px 0px 0.5px var(--SECOONF--color) ;
+  margin-bottom: 15px;
+}
+
+.Dashboard .bodyDashboard .allproduct .save h2 i{
+  width: 27px;
+  height: 27px;
+  margin-right: 10px;
+  background-color: #c689f945;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+}
+.Dashboard .bodyDashboard .allproduct .save h2 i .icon{
+  color: var(--SECOONF--color);
+  font-size: 20px;
+}
+.Dashboard .slidebar .avatar{
+  display: flex;
+  align-items: center;
+  height:50px ;
+  margin-left: 10px;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save{
+  display: flex;
+  align-items: center;
+  background-color:rgba(0, 0, 0, 0.477);
+  border-radius: 5px;
+  width: 90%;
+  margin: auto;
+  box-shadow: 0px 0px 2px #ffffffae;
+  padding: 3px;
+  position: relative;
+  margin-top: 10px;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save span{
+  width: 28px;
+  height: 28px;
+  background-color: var(--color2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  font-weight: 800;
+  font-size: 18px;
+  text-transform: capitalize;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save .icon-points{
+  color: #fff;
+  position: absolute;
+  right: 5px;
+  font-size: 20px;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save h3{
+  font-size: 13px;
+  font-weight: 800;
+  color: #fff;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save .name-saved{
+  margin-left:10px ;
+}
+.Dashboard .bodyDashboard .allproduct .save .body-save .name-saved p{
+  font-size: 10px;
+  margin-left: 5px;
+  color: #ffffff7d;
+}
+.Dashboard .slidebar .menu{
+  padding-top: 30px;
+}
+.Dashboard .slidebar .menu ul li{
+  list-style: none;
+}
+.Dashboard .slidebar .menu ul li i{
+  padding-right: 20px;
+  font-size: 17px;
+  padding-left: 10px;
+}
+.Dashboard .slidebar .menu ul li a{
+  width:100% ;
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  padding: 12px 0px;
+  padding-left: 5px;
+  color: var(--titles);
+  transition: 0.3s all ease-in-out;
+  border-bottom: 1px solid transparent;
+}
+.Dashboard .slidebar .menu ul a:hover{
+  background-color: #ffffff15;
+  color: white;
+  border-bottom: 1px solid var(--titles);
+}
+@media (max-width:576px) {
+}
+@media (max-width:768px) {
+}
+@media (max-width:992px) {
+  .Dashboard .bodyDashboard .cyrcles{
+    display: block;
+  }
+  .Dashboard .bodyDashboard .cyrcles .circular {
+    margin-top: 10px;
+  }
+  .Dashboard .bodyDashboard .cyrcles .first,.second, 
+  .third{
+    width: 80%;
+    margin: auto;
+  }
+  .Dashboard .bodyDashboard {
+    padding: 0;
+    width: 100%;
+    margin-top: 10px;
+  }
+  .flex-dashboard{
+    width: 100%;
+  }
+  .Dashboard .slidebar{
+    display: block;
+  }
+  .Dashboard .bodyDashboard .actions{
+    display: block;
+    height: 100%;
+  }
+.Dashboard .bodyDashboard .actions .activites{
+ height: 200px;
+}
+.Dashboard .bodyDashboard .actions .sales{
+  width: 80%;
+  margin: auto;
+}
+.Dashboard .bodyDashboard .actions .sales .total-sales{
+  width: 100%;
+  padding-bottom: 10px;
+}
+.Dashboard .bodyDashboard .actions .sales .total-amount .amount{
+  margin-bottom: 10px;
+}
+.Dashboard .bodyDashboard .actions .activites{
+  width: 80%;
+  height: 100%;
+  margin: auto;
+  margin-top: 20px;
+}
+.Dashboard .bodyDashboard .allproduct {
+  display: block;
+  width: 100%;
+}
+.Dashboard .bodyDashboard .allproduct .save{
+  width: 80%;
+  margin: auto;
+  margin-top: 20px;
+}
+.Dashboard .bodyDashboard .allproduct .projects {
+  width: 80%;
+  margin: auto;
+  margin-top:20px;
+}
+.Dashboard .slidertop .menu-icon{
+  display: block;
+}
+.flex-dashboard {
+  display: block;
+}
+.Dashboard .slidebar{
+  height: 100%;
+  width: 100%;
+}
+.sli{
+  display: none;
+}
+} 
+@media (min-width:1200px) {
+
 }
